@@ -16,4 +16,6 @@
 
 ## 💎 Gems used: 
 
+ - devise
+ - bootstrap-sass, '~> 3.4.1'
  - *To be continued...*
