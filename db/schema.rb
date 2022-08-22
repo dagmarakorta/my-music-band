@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_21_080633) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_22_124722) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,13 +33,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_21_080633) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "table_user_instruments", force: :cascade do |t|
+  create_table "user_instruments", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "instrument_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["instrument_id"], name: "index_table_user_instruments_on_instrument_id"
-    t.index ["user_id"], name: "index_table_user_instruments_on_user_id"
+    t.index ["instrument_id"], name: "index_user_instruments_on_instrument_id"
+    t.index ["user_id"], name: "index_user_instruments_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,6 +58,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_21_080633) do
   end
 
   add_foreign_key "bands", "users"
-  add_foreign_key "table_user_instruments", "instruments"
-  add_foreign_key "table_user_instruments", "users"
+  add_foreign_key "user_instruments", "instruments"
+  add_foreign_key "user_instruments", "users"
 end
