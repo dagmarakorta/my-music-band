@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :band
+  has_many :instruments, through: :user_instruments
 end
