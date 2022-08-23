@@ -4,3 +4,16 @@
 <p>email : <%= @user.email %></p>
 <p>lat : <%= @user.lat %></p>
 <p>long : <%= @user.long %></p>
+
+<ul>
+  <% @instruments.each do |instrument| %>
+    <li><%= instrument.instrument %></li>
+  <% end %>
+</ul>
+
+
+<%= form_for @new_instrument do |f| %>
+  <%= f.label :instrument_id %>
+  <%= f.collection_select :instrument_id, Instrument.all, :id, :instrument %>
+  <%= f.submit %>
+<% end %>
