@@ -4,3 +4,10 @@
 <p>email : <%= @user.email %></p>
 <p>lat : <%= @user.lat %></p>
 <p>long : <%= @user.long %></p>
+
+
+<%= form_for @user_instruments do |f| %>
+  <%= f.label :instrument_id %>
+  <%= f.collection_select :instrument_id, Instrument.all, :id, :instrument %>
+  <%= f.submit %>
+<% end %>

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     set_user
+    @user_instruments = UserInstrument.new
   end
 
   private
