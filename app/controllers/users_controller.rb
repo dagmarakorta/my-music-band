@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def show
     set_user
     @new_instrument = UserInstrument.new
-    @user_instruments = UserInstrument.where(user_id: @user.id)
+    @instruments = @user.instruments
   end
 
   private
