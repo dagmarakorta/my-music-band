@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :band
+  # belongs_to :band
   has_many :instruments, through: :user_instruments
 end
