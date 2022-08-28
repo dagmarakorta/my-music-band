@@ -8,7 +8,10 @@
 <ul>
   <% @instruments.each do |i| %>
     <li>
-      <p><%= i.instrument.name %> : <%= i.experience_level %></p>
+      <%= i.instrument.name %> : <%= i.experience_level %>
+      <%= link_to user_instrument_path(i.id), data: {turbo_method: :delete, turbo_confirm: "Remove ?"} do %>
+        <i class="fa-solid fa-trash-can"></i>
+      <% end %>
     </li>
   <% end %>
 </ul>
