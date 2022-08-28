@@ -6,6 +6,12 @@ class UserInstrumentsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def destroy
+    @instrument = UserInstrument.find(params[:id])
+    @instrument.destroy
+    redirect_to user_path(current_user)
+  end
+
   private
   def user_instrument_params
     params.require(:user_instrument).permit(:instrument_id, :experience_level)
