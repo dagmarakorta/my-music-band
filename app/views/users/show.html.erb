@@ -6,14 +6,18 @@
 <p>long : <%= @user.long %></p>
 
 <ul>
-  <% @instruments.each do |instrument| %>
-    <li><%= instrument.instrument %></li>
+  <% @instruments.each do |i| %>
+    <li>
+      <p><%= i.instrument.name %> : <%= i.experience_level %></p>
+    </li>
   <% end %>
 </ul>
 
 
 <%= form_for @new_instrument do |f| %>
   <%= f.label :instrument_id %>
-  <%= f.collection_select :instrument_id, Instrument.all, :id, :instrument %>
+  <%= f.collection_select :instrument_id, Instrument.all, :id, :name %>
+  <%= f.label :experience_level %>
+  <%= f.number_field :experience_level, in: 1..10, step: 1 %>
   <%= f.submit %>
 <% end %>
