@@ -8,6 +8,6 @@ class UserInstrumentsController < ApplicationController
 
   private
   def user_instrument_params
-    params.require(:user_instrument).permit(:instrument_id)
+    params.require(:user_instrument).permit(:instrument_id, :experience_level)
   end
 end
