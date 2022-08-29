@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get "/users/:id", to: "users#show", as: "user"
-  resources :user_instruments, only: [:create, :destroy]
+  resources :user_instruments, only: [:create, :update, :destroy]
 end

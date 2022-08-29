@@ -9,9 +9,17 @@
   <% @instruments.each do |i| %>
     <li>
       <%= i.instrument.name %> : <%= i.experience_level %>
+
+      <%= form_for i do |f| %>
+        <%= f.label :experience_level %>
+        <%= f.number_field :experience_level, in: 1..10, step: 1 %>
+        <%= f.submit %>
+      <% end %>
+
       <%= link_to user_instrument_path(i.id), data: {turbo_method: :delete, turbo_confirm: "Remove ?"} do %>
         <i class="fa-solid fa-trash-can"></i>
       <% end %>
+
     </li>
   <% end %>
 </ul>
