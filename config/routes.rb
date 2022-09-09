@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "/users/:id", to: "users#show", as: "user"
   resources :user_instruments, only: [:create, :update, :destroy]
+  resources :bands, only: [:new, :create]
 end
